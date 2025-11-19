@@ -6,74 +6,112 @@
 <title>Seis Secciones Persistentes con Fotos</title>
 <style>
   body {
-    font-family: Arial, sans-serif;
-    background: url('./izucar.jpg');
-    padding: 20px;
-  }
+  font-family: Arial, sans-serif;
+  background: url('./izucar.jpg');
+  padding: 20px;
+}
 
-  h1 {
-    text-align: center;
-    margin-bottom: 25px;
-  }
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.box {
+  background: #91e491;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.box:hover {
+  background: #72e372;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.fields input, .fields select {
+  width: 100%;
+  padding: 7px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  margin-bottom: 8px;
+}
+
+.fields {
+  flex: 1;
+}
+
+#g{
+  margin-top:25px; 
+  padding:12px 25px; 
+  font-size:18px; 
+  border-radius:10px; 
+  cursor:pointer;
+  background-color: #72e372;
+}
+
+#b{
+  margin-top:15px; 
+  display:inline-block; 
+  padding:12px 25px; 
+  font-size:18px; 
+  border-radius:10px; 
+  background: #72e372;
+  color: white; 
+  text-decoration:none;
+}
+
+/* 📱 RESPONSIVE DESIGN */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 992px) {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .box {
-    background: #91e491;
-    padding: 20px;
-    border-radius: 12px;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    transition: background 0.3s ease;
-  }
-
-  .box:hover {
-    background: #72e372;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   img {
-    width: 120px;
-    height: 120px;
-    border-radius: 10px;
-    object-fit: cover;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Celulares (pantallas pequeñas) */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 
-  .fields input, .fields select {
+  .box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  #g, #b {
     width: 100%;
-    padding: 7px;
-    border-radius: 6px;
-    border: 1px solid #aaa;
-    margin-bottom: 8px;
+    text-align: center;
   }
+}
 
-  .fields {
-    flex: 1;
-  }
-
-  #g{
-    margin-top:25px; 
-    padding:12px 25px; 
-    font-size:18px; 
-    border-radius:10px; 
-    cursor:pointer;
-    background-color: #72e372;
-  }
-
-  #b{
-    margin-top:15px; 
-    display:inline-block; 
-    padding:12px 25px; 
-    font-size:18px; 
-    border-radius:10px; 
-    background: #72e372;
-    color: white; 
-    text-decoration:none;
-  }
 </style>
 </head>
 <body>
@@ -196,6 +234,7 @@ if (localStorage.getItem('nombre1')) bloquear();
 
 </body>
 </html>
+
 
 
 
